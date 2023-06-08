@@ -18,22 +18,34 @@ public class WebCalculatorController {
     }
 
     @GetMapping(path = "/plus")
-    public String add(@RequestParam("num1") Integer num1, @RequestParam("num2") Integer num2){
+    public String add(@RequestParam(value = "num1", required = false) Integer num1, @RequestParam(value = "num2", required = false) Integer num2){
+        if (num1 == null || num2 == null) {
+            return "Ошибка: Необходимо указать оба параметра num1 и num2";
+        }
         int result = calculatorService.add(num1, num2);
         return num1 + " + " + num2 + " = " + result;
     }
     @GetMapping("/minus")
-    public String subtract(@RequestParam("num1") Integer num1, @RequestParam("num2") Integer num2){
+    public String subtract(@RequestParam(value = "num1", required = false) Integer num1, @RequestParam(value = "num2", required = false) Integer num2){
+        if (num1 == null || num2 == null) {
+            return "Ошибка: Необходимо указать оба параметра num1 и num2";
+        }
         int result = calculatorService.subtract(num1, num2);
         return num1 + " - " + num2 + " = " + result;
     }
     @GetMapping("/multiply")
-    public String multiply(@RequestParam("num1") Integer num1, @RequestParam("num2") Integer num2){
+    public String multiply(@RequestParam(value = "num1", required = false) Integer num1, @RequestParam(value = "num2", required = false) Integer num2){
+        if (num1 == null || num2 == null) {
+            return "Ошибка: Необходимо указать оба параметра num1 и num2";
+        }
         int result = calculatorService.multiply(num1, num2);
         return num1 + " * " + num2 + " = " + result;
     }
     @GetMapping("/divide")
-    public String divide(@RequestParam("num1") Integer num1, @RequestParam("num2") Integer num2){
+    public String divide(@RequestParam(value = "num1", required = false) Integer num1, @RequestParam(value = "num2", required = false) Integer num2){
+        if (num1 == null || num2 == null) {
+            return "Ошибка: Необходимо указать оба параметра num1 и num2";
+        }
         int result = calculatorService.divide(num1, num2);
         return num1 + " / " + num2 + " = " + result;
     }
