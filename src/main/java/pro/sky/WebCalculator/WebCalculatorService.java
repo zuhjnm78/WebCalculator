@@ -2,13 +2,13 @@ package pro.sky.WebCalculator;
 
 public interface WebCalculatorService {
     String welcome();
-    int add(Integer num1, Integer num2);
+    int add(int num1, int num2);
 
-    int subtract(Integer num1, Integer num2);
+    int subtract(int num1, int num2);
 
-    int multiply(Integer num1, Integer num2);
+    int multiply(int num1, int num2);
 
-    int divide(Integer num1, Integer num2);
+    int divide(int num1, int num2);
 
 
 }
